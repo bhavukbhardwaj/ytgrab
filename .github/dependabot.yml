@@ -1,0 +1,20 @@
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly
+    commit-message:
+      prefix: "ci"
+  - package-ecosystem: docker
+    directory: /
+    schedule:
+      interval: monthly
+    commit-message:
+      prefix: "build"
+  - package-ecosystem: pip
+    directory: /
+    schedule:
+      interval: weekly   # yt-dlp needs frequent updates to keep up with YouTube changes
+    commit-message:
+      prefix: "build"

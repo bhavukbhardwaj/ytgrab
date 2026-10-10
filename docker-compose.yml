@@ -1,0 +1,17 @@
+services:
+  ytgrab:
+    build: .
+    image: ytgrab:latest
+    container_name: ytgrab
+    # Published on localhost only. Do not expose this to the internet without auth in front.
+    ports:
+      - "127.0.0.1:5055:5055"
+    environment:
+      MAX_CONCURRENT: "2"
+    read_only: true
+    tmpfs:
+      - /tmp:size=2g
+    cap_drop: [ALL]
+    security_opt:
+      - no-new-privileges:true
+    restart: unless-stopped
