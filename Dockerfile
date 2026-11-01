@@ -1,4 +1,4 @@
-FROM python:3.12-slim
+FROM python:3.15-slim
 
 LABEL org.opencontainers.image.title="ytgrab" \
       org.opencontainers.image.description="Self-hosted YouTube downloader (MP4 / MP3 / M4A / WAV) over yt-dlp" \
